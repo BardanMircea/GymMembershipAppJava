@@ -5,6 +5,7 @@ Imagined Project Requirement:
     An applicaon for a gym that offers contact sports memberships, which keeps track of its Classes, Instructors and Registered Members 
     
 Functionalities Implemented (so far)
+    
     •Members Operations
     
       -  creating(registering) a member (checking uniqueness of email and phone)
@@ -19,12 +20,14 @@ Functionalities Implemented (so far)
       -  deleting a member
       
   •Classes Operations
+  
       -  adding a new class
       -  listing of all classes
       -  access the class reviews for each class
       -  deleting the class (with subsequent deletion of all class reviews and class memberships)
       
   •Instructors Operations
+  
       -  listing of all instructors
       -  deleting an instructor (with subsequent deletion of all classes and reviews of classes that the instructor teaches, and of all registered class memberships)
       -  assigning an instructor to a new class
