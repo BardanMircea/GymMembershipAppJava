@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!-- metadata for bootstrap-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- css for bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+        <title>Write A Review</title>
+    </head>
+
+    <body>
+
+        <div th:class="container">
+
+            <h3>
+                Write review for
+                <i>
+                    <b><span th:text="${theClass.description}"></span></b>
+                </i>
+            </h3>
+
+
+            <br><br>
+
+            <form action="#" th:action="@{/reviews/saveReviewForClass(classId=${theClass.id}, memberId=${member.id})}" method="POST">
+<!--                <input th:type="hidden" value="${theClass.id}" name="classId">-->
+<!--                <input th:type="hidden" value="${member.id}" name="memberId">-->
+                <label for="review">
+                    <span th:text="${member.firstName}"></span>
+                    <span th:text="${member.lastName}"> </span>
+                    <span th:text="says"></span>
+                </label>
+                <textarea id="review" th:field="${review.message}" th:class="form-control" rows="5">
+                    Leave A Review
+                </textarea>
+                <input type="submit" class="btn btn-success"/>
+
+            </form>
+            <div class="alert alert-danger" th:if="${emptyMessage}" th:text="${emptyMessage}">
+
+            </div>
+
+            <br>
+            <div>
+                <a th:href="@{/memberClassRegistration/showMemberDetails(memberId=${member.id})}"
+                   class="btn btn-secondary btn-sm">< Back</a>
+            </div>
+
+        </div>
+
+        <!-- js for bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    </body>
+
+</html>

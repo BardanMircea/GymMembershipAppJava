@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <!-- metadata for bootstrap-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- css for bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+        <title>Member Details</title>
+    </head>
+
+    <body>
+
+        <div class="container">
+            <h3>Member info</h3>
+            <table class="table table-bordered table-striped table-hover">
+                <thead class="table-dark">
+                    <tr >
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Active Membership</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr >
+                        <td th:text="${member.firstName}"></td>
+                        <td th:text="${member.lastName}"></td>
+                        <td th:text="${member.email}"></td>
+                        <td th:text="${member.activeMembership}"></td>
+                        <td th:text="${member.phone}"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <a th:href="@{/members/update(memberId=${member.id})}" class="btn btn-secondary btn-sm">Update Member Info</a>
+        </div>
+
+        <br>
+
+        <div class="container">
+
+            <h3>Current Memberships</h3>
+            <table class="table table-bordered table-striped table-hover">
+                <thead class="table-dark">
+                    <tr >
+                        <th>Course Description</th>
+                        <th>Instructor</th>
+                        <th>Paid On</th>
+                        <th>Paid Until</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr th:each="registration : ${registrations}">
+                        <td th:text="${registration.class.description}"></td>
+                        <td th:text="${registration.class.instructor}"></td>
+                        <td th:text="${registration.paidOn}"></td>
+                        <td th:text="${registration.paidUntil}"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <a th:href="@{/memberClassRegistration/showAddNewClassForm(memberId=${member.id})}" class="btn btn-secondary btn-sm">Add New Course</a>
+        </div>
+
+        <br>
+
+        <div class="container">
+            <a th:href="@{/members/list}"
+               class="btn btn-secondary btn-sm">< Members</a>
+        </div>
+
+        <!-- js for bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,9 @@
+.relativeContainer {
+       position: relative;
+}
+
+.absoluteContainer {
+       position: absolute;
+       background-color: white;
+
+}

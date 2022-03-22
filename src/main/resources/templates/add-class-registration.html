@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <!-- metadata for bootstrap-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- css for bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+        <title>Register Member</title>
+    </head>
+
+    <body>
+        <h3>Class Registration</h3>
+
+        <hr>
+
+        <div class="form-group col-4">
+
+            <form action="#" th:action="@{/memberClassRegistration/showUpdatedMemberDetails(memberId=${memberClassRegistration.member.id})}"
+                                th:object="${memberClassRegistration}" method="POST">
+
+                <h4>Choose A Class To Add</h4>
+                <input type="hidden" th:value="*{member.id}" name="memberId">
+
+                <select th:field="*{theClass.description}">
+                    <option th:each="crs : ${theClasses}"
+                            th:value="${crs.description}"
+                            th:text="${crs}"></option>
+                </select>
+                <div class="alert alert-danger" th:if="${duplicateClassRegistration}" th:text="${duplicateClassRegistration}">
+                </div>
+
+                <button class="btn btn-success btn-sm" type="submit">Save</button>
+
+                <br><br>
+
+                <div>
+                    <a th:href="@{/memberClassRegistration/showMemberDetails(memberId=${memberClassRegistration.member.id})}"
+                       class="btn btn-secondary btn-sm">< Details</a>
+
+                </div>
+            </form>
+        </div>
+
+    <!-- js for bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    </body>
+
+</html>

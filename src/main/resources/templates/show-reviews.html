@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!-- metadata for bootstrap-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- css for bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+        <title>Reviews For ${class.description}"</title>
+    </head>
+
+    <body th:style="'background: url() no-repeat center center fixed;'">
+
+        <div class="container">
+            <h3>
+                Reviews for
+                <i><b><span th:text="${theClass.description}"></span></b></i>
+                Class:
+            </h3>
+            <br><br><br>
+            <div class="container" th:each="review : ${reviews}">
+                <div >
+                    <p>
+                        <b> <span th:text="${review.author}"></span> </b>
+                        <span th:text="wrote"></span>
+                        <span th:text="':'"></span>
+                    </p>
+
+                    <h4 class="alert alert-primary" style="text-align: center; vertical-align: middle;">
+                        <q>
+                            <span th:text="${review.message}"></span>
+                        </q>
+                    </h4>
+                </div>
+                <br><br>
+            </div>
+
+            <div class="d-flex justify-content-center alert alert-primary" th:if="${noReviewsFound}" th:text="${noReviewsFound}"></div>
+
+            <div>
+                <a th:href="@{/classes/list}"
+                   class="btn btn-secondary btn-sm">< Classes</a>
+            </div>
+        </div>
+
+    <!-- js for bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    </body>
+
+</html>
