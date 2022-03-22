@@ -16,7 +16,7 @@ Functionalities Implemented (so far)
       -  removing of class registrations
       -  renewing expired class registrations
       -  writing of reviews for classes registered for (even if membership expired)
-      -  show active/inactive membership .ag
+      -  show active/inactive membership flag
       -  deleting a member
       
   •Classes Operations
