@@ -2,7 +2,7 @@
 Gym Membership Management
 
 Imagined Project Requirement:
-    An applicaon for a gym that offers contact sports memberships, which keeps track of its Classes, Instructors and Registered Members 
+    An application for a gym that offers contact sports memberships, which keeps track of its Classes, Instructors and Registered Members 
     
 Functionalities Implemented (so far)
     
@@ -11,7 +11,7 @@ Functionalities Implemented (so far)
       -  creating(registering) a member (checking uniqueness of email and phone)
       -  retrieving(finding) members (by specifc characters in their name and/or email address)
       -  listing of all members (by their last name)
-      -  updating member informaon (checking uniqueness of email and phone)
+      -  updating member information (checking uniqueness of email and phone)
       -  registering for new classes (checking for uniqueness of class registration)
       -  removing of class registrations
       -  renewing expired class registrations
