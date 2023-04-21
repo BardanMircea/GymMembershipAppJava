@@ -4,10 +4,10 @@ Gym Membership Management
 Imagined Project Requirement:
     An application for a gym that offers contact sports memberships, which keeps track of its Classes, Instructors and Registered Members 
 
-Technologies used: Java, Spring Boot, Maven, Hibernate, MySQL, Thymeleaf
+Technologies: Java, Spring Boot, Maven, Hibernate, MySQL, Thymeleaf
     
     
-Functionalities Implemented (so far)
+Implemented Functionalities
     
     •Members Operations
     
