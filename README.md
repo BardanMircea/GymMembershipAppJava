@@ -9,7 +9,7 @@ Technologies: Java, Spring Boot, Maven, Hibernate, MySQL, Thymeleaf
     
 Implemented Functionalities
     
-    •Members Operations
+ Members Operations
     
       -  creating(registering) a member (checking uniqueness of email and phone)
       -  retrieving(finding) members (by specifc characters in their name and/or email address)
@@ -22,14 +22,14 @@ Implemented Functionalities
       -  show active/inactive membership flag
       -  deleting a member
       
-  •Classes Operations
+  Classes Operations
   
       -  adding a new class
       -  listing of all classes
       -  access the class reviews for each class
       -  deleting the class (with subsequent deletion of all class reviews and class memberships)
       
-  •Instructors Operations
+  Instructors Operations
   
       -  listing of all instructors
       -  deleting an instructor (with subsequent deletion of all classes and reviews of classes that the instructor teaches, and of all registered class memberships)
